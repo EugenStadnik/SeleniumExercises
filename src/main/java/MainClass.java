@@ -289,6 +289,7 @@ public class MainClass {
  * (no one element is found)
  *
  * Using axis:
+ *
  * Ancestors:
  * /html/body/div/a - returns anchor
  * /html/body/div/a/ancestor::* - find all previous tags (all 3 parent elements are found)
@@ -306,6 +307,7 @@ public class MainClass {
  * //li[@class="interlanguage-link interwiki-de"] - finds link to Deutsch wiki
  * //li[@class="interlanguage-link interwiki-de"]/following-sibling::* - finds all followed languages linkages at the same level
  * //li[@class="interlanguage-link interwiki-de"]/preceding-sibling::* - finds all preceding languages linkages at the same level
+ *
  * Parent:
  * /html/body/div/a/parent::div - find previous <div> tag (1 element is found)
  * //*[@id="top"]/parent::* - find any previous tag (1 the same element is found)
@@ -315,6 +317,10 @@ public class MainClass {
 /** the same as //*[@id="top"]/parent::* or //*[@id="top"]/..
  * You could combine axes at any valid order:
  * //a[@title="German" and @lang="de"]/parent::li/following-sibling::li[1]/ancestor::nav[@id="p-lang"]
+ *
+ * Descendant:
+ * /html/body/descendant::a - returns anchor ommiting /div node
+ * /html/body//a - returns anchor ommiting /div node
  *
  * Using current node:
  * /html/body/div/a/. - invokes itself
